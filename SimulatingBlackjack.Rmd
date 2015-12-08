@@ -3,12 +3,14 @@ title: "Simulating BlackJack: A Case Study by Clay Moore"
 author: "Clay Moore"
 date: "November 25, 2015"
 output: 
-  html_document: 
-    keep_md: true
+  html_document
 ---
 
 
 ```{r Base Code, echo=FALSE}
+require(httpuv)
+require(caTools)
+
 deck = rep(c(1:10, 10, 10, 10),4)
 shuffle_decks = function(n) sample(rep(deck,n))
 handValue = function(cards) {
